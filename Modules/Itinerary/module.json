@@ -1,0 +1,11 @@
+{
+    "name": "Itinerary",
+    "alias": "itinerary",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Itinerary\\Providers\\ItineraryServiceProvider"
+    ],
+    "files": []
+}

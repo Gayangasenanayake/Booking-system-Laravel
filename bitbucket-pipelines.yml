@@ -1,0 +1,47 @@
+image: php:8.1-fpm
+
+definitions:
+  steps:
+    - step: &composer-install
+        name: Build PHP
+        caches:
+          - composer
+        script:
+          - ls -al
+          - apt-get update && apt-get install -qy unzip git curl libmcrypt-dev
+          - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+          - composer --version
+          - composer install --no-ansi --no-dev --no-interaction --no-plugins --no-progress --no-scripts --optimize-autoloader --prefer-dist --ignore-platform-reqs
+        artifacts:
+          - vendor/**
+#    - step: &npm-build
+#        name: Build Assets
+#        image: node:12.20
+#        caches:
+#          - node
+#        script:
+#          - npm install
+#          - npm run production
+#        artifacts:
+#          - public/**
+    - step: &deploy-production
+        name: Deploy (Production)
+        deployment: Production
+        caches:
+          - composer
+        script:
+          - apt-get update && apt-get install -qy unzip git curl libmcrypt-dev rsync
+          - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+          - composer --version
+          - composer global require "laravel/envoy"
+          - ~/.composer/vendor/bin/envoy run deploy --host=$DEPLOY_HOST --user=$DEPLOY_USER --path=$DEPLOY_PATH --build=$BITBUCKET_BUILD_NUMBER --commit=$BITBUCKET_COMMIT --branch=$BITBUCKET_BRANCH --php=php --dir=$BITBUCKET_CLONE_DIR
+
+pipelines:
+  default:
+    - step: *composer-install
+    # - step: *npm-build
+  branches:
+    master:
+      - step: *composer-install
+      # - step: *npm-build
+      - step: *deploy-production

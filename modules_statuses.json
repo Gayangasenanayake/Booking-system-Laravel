@@ -1,0 +1,19 @@
+{
+    "Activity": true,
+    "Core": true,
+    "Product": true,
+    "Course": true,
+    "Staff": true,
+    "Customer": true,
+    "Booking": true,
+    "Itinerary": true,
+    "Schedule": true,
+    "Analytic": true,
+    "Controller": true,
+    "EventController": true,
+    "Widget": true,
+    "Setting": true,
+    "Location": true,
+    "PaymentSetting": true,
+    "BookingProcess": true
+}

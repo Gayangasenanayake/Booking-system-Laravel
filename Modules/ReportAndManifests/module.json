@@ -1,0 +1,11 @@
+{
+    "name": "ReportAndManifests",
+    "alias": "reportandmanifests",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\ReportAndManifests\\Providers\\ReportAndManifestsServiceProvider"
+    ],
+    "files": []
+}

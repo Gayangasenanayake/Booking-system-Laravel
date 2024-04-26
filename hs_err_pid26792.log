@@ -1,0 +1,235 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 1048576 bytes for AllocateHeap
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:44), pid=26792, tid=41408
+#
+# JRE version:  (17.0.9+7) (build )
+# Java VM: OpenJDK 64-Bit Server VM (17.0.9+7-b1087.9, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: git4idea.http.GitAskPassApp Password for 'https://gayanga@bitbucket.org': 
+
+Host: AMD Ryzen 7 4800H with Radeon Graphics         , 16 cores, 15G,  Windows 11 , 64 bit Build 22621 (10.0.22621.2506)
+Time: Tue Jan 16 15:11:49 2024 India Standard Time elapsed time: 0.014120 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000001d3210a7b70):  JavaThread "Unknown thread" [_thread_in_vm, id=41408, stack(0x0000003104a00000,0x0000003104b00000)]
+
+Stack: [0x0000003104a00000,0x0000003104b00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x688349]
+V  [jvm.dll+0x841bfa]
+V  [jvm.dll+0x84383e]
+V  [jvm.dll+0x843ea3]
+V  [jvm.dll+0x24bdef]
+V  [jvm.dll+0xa6b5b]
+V  [jvm.dll+0x2ebc77]
+V  [jvm.dll+0x2e390b]
+V  [jvm.dll+0x812771]
+V  [jvm.dll+0x371d41]
+V  [jvm.dll+0x7f12bc]
+V  [jvm.dll+0x3f59cf]
+V  [jvm.dll+0x3f7601]
+C  [jli.dll+0x528f]
+C  [ucrtbase.dll+0x29363]
+C  [KERNEL32.DLL+0x1257d]
+C  [ntdll.dll+0x5aa58]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ff871b8df18, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x000001d321113910 GCTaskThread "GC Thread#0" [stack: 0x0000003104b00000,0x0000003104c00000] [id=50904]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ff871340bc0]
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000001d3210a11a0] Heap_lock - owner thread: 0x000001d3210a7b70
+
+Heap address: 0x0000000709400000, size: 3948 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+<Empty>
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000709400000, 0x0000000800000000)
+  region size 2048K, 0 young (0K), 0 survivors (0K)
+ Metaspace       used 0K, committed 0K, reserved 0K
+  class space    used 0K, committed 0K, reserved 0K
+
+Heap Regions: E=young(eden), S=young(survivor), O=old, HS=humongous(starts), HC=humongous(continues), CS=collection set, F=free, OA=open archive, CA=closed archive, TAMS=top-at-mark-start (previous, next)
+
+Card table byte_map: [0x000001d334860000,0x000001d335020000] _byte_map_base: 0x000001d331016000
+
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.009 Loaded shared library C:\Program Files\JetBrains\PhpStorm 2023.2.4\jbr\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff6ba230000 - 0x00007ff6ba23a000 	C:\Program Files\JetBrains\PhpStorm 2023.2.4\jbr\bin\java.exe
+0x00007ff919490000 - 0x00007ff9196a7000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ff917ec0000 - 0x00007ff917f84000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ff916800000 - 0x00007ff916ba6000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ff9170c0000 - 0x00007ff9171d1000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ff8f9fc0000 - 0x00007ff8f9fd7000 	C:\Program Files\JetBrains\PhpStorm 2023.2.4\jbr\bin\jli.dll
+0x00007ff8fe360000 - 0x00007ff8fe37b000 	C:\Program Files\JetBrains\PhpStorm 2023.2.4\jbr\bin\VCRUNTIME140.dll
+0x00007ff917d10000 - 0x00007ff917ebe000 	C:\WINDOWS\System32\USER32.dll
+0x00007ff916d10000 - 0x00007ff916d36000 	C:\WINDOWS\System32\win32u.dll
+0x00007ff9159c0000 - 0x00007ff915c53000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.2506_none_270c5ae97388e100\COMCTL32.dll
+0x00007ff9171f0000 - 0x00007ff917219000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ff918280000 - 0x00007ff918327000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ff916eb0000 - 0x00007ff916fc8000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ff916bb0000 - 0x00007ff916c4a000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ff917590000 - 0x00007ff9175c1000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ff90e950000 - 0x00007ff90e95c000 	C:\Program Files\JetBrains\PhpStorm 2023.2.4\jbr\bin\vcruntime140_1.dll
+0x00007ff8f2fa0000 - 0x00007ff8f302d000 	C:\Program Files\JetBrains\PhpStorm 2023.2.4\jbr\bin\msvcp140.dll
+0x00007ff871050000 - 0x00007ff871cd2000 	C:\Program Files\JetBrains\PhpStorm 2023.2.4\jbr\bin\server\jvm.dll
+0x00007ff918b90000 - 0x00007ff918c41000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ff918010000 - 0x00007ff9180b5000 	C:\WINDOWS\System32\sechost.dll
+0x00007ff918160000 - 0x00007ff918277000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ff903c80000 - 0x00007ff903c89000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ff9166d0000 - 0x00007ff91671d000 	C:\WINDOWS\SYSTEM32\POWRPROF.dll
+0x00007ff90e8f0000 - 0x00007ff90e924000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ff90ce10000 - 0x00007ff90ce1a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ff917f90000 - 0x00007ff918001000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ff9166b0000 - 0x00007ff9166c3000 	C:\WINDOWS\SYSTEM32\UMPDC.dll
+0x00007ff915120000 - 0x00007ff915138000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ff903c70000 - 0x00007ff903c7a000 	C:\Program Files\JetBrains\PhpStorm 2023.2.4\jbr\bin\jimage.dll
+0x00007ff916080000 - 0x00007ff9162b3000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ff9175d0000 - 0x00007ff917959000 	C:\WINDOWS\System32\combase.dll
+0x00007ff918cb0000 - 0x00007ff918d87000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007ff915f40000 - 0x00007ff915f72000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ff916fd0000 - 0x00007ff91704a000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ff901a40000 - 0x00007ff901a65000 	C:\Program Files\JetBrains\PhpStorm 2023.2.4\jbr\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\JetBrains\PhpStorm 2023.2.4\jbr\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.2506_none_270c5ae97388e100;C:\Program Files\JetBrains\PhpStorm 2023.2.4\jbr\bin\server
+
+VM Arguments:
+java_command: git4idea.http.GitAskPassApp Password for 'https://gayanga@bitbucket.org': 
+java_class_path (initial): C:/Program Files/JetBrains/PhpStorm 2023.2.4/plugins/vcs-git/lib/git4idea-rt.jar;C:/Program Files/JetBrains/PhpStorm 2023.2.4/lib/externalProcess-rt.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 12                                        {product} {ergonomic}
+     uint ConcGCThreads                            = 3                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 13                                        {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 2097152                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 260046848                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 4139778048                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 2097152                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 7602480                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122027880                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122027880                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 4139778048                             {manageable} {ergonomic}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+PATH=C:\Program Files\Git\mingw64\libexec\git-core;C:\Program Files\Git\mingw64\libexec\git-core;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\gayanga\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\xampp\php;C:\composer;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Users\gayanga\AppData\Local\Programs\Python\Python312;C:\Users\gayanga\AppData\Local\Programs\Python\Launcher;C:\Users\gayanga\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\PhpStorm 2023.2.4\bin;C:\Users\gayanga\AppData\Roaming\npm;C:\Users\gayanga\AppData\Roaming\Composer\vendor\bin
+USERNAME=gayanga
+DISPLAY=:0.0
+LC_ALL=en_US.UTF-8
+TERM=xterm-256color
+TMPDIR=C:\Users\gayanga\AppData\Local\Temp
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=AMD64 Family 23 Model 96 Stepping 1, AuthenticAMD
+TMP=C:\Users\gayanga\AppData\Local\Temp
+TEMP=C:\Users\gayanga\AppData\Local\Temp
+
+
+
+Periodic native trim disabled
+
+JNI global refs:
+JNI global refs: 0, weak refs: 0
+
+JNI global refs memory usage: 0, weak refs: 0
+
+OOME stack traces (most recent first):
+Classloader memory used:
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 11 , 64 bit Build 22621 (10.0.22621.2506)
+OS uptime: 4 days 18:45 hours
+
+CPU: total 16 (initial active 16) (16 cores per cpu, 2 threads per core) family 23 model 96 stepping 1 microcode 0x0, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4a, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, clmul, bmi1, bmi2, adx, sha, fma, vzeroupper, clflush, clflushopt
+Processor Information for all 16 processors :
+  Max Mhz: 2900, Current Mhz: 2900, Mhz Limit: 2900
+
+Memory: 4k page, system-wide physical 15791M (2201M free)
+TotalPageFile size 43202M (AvailPageFile size 14M)
+current process WorkingSet (physical memory assigned to process): 11M, peak: 11M
+current process commit charge ("private bytes"): 69M, peak: 70M
+
+vm_info: OpenJDK 64-Bit Server VM (17.0.9+7-b1087.9) for windows-amd64 JRE (17.0.9+7-b1087.9), built on 2023-12-05 by "builduser" with MS VC++ 16.10 / 16.11 (VS2019)
+
+END.
